@@ -1,0 +1,400 @@
+rm: cannot remove 'data': Is a directory
+rm: cannot remove 'e*': No such file or directory
+rm: cannot remove 'k*': No such file or directory
+rm: cannot remove 'f*': No such file or directory
+rm: cannot remove 'hat*': No such file or directory
+rm: cannot remove 'crt*': No such file or directory
+rm: cannot remove 'rct*': No such file or directory
+rm: cannot remove '*.nek5000': No such file or directory
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| COPYRIGHT (c) 2008-2020 UCHICAGO ARGONNE, LLC            |
+| Version:  20.0-dev                                       |
+| Web:      https://nek5000.mcs.anl.gov                    |
+|                                                          |
+\\----------------------------------------------------------/
+
+ Number of MPI ranks :           4
+  
+ Reading /ccs/home/ldulac/Nek5000/NekDCTB/examples/cht2d/run_gen/cht2d.par                                                                   
+general = [(null)]
+general:stopat = [endTime]
+general:endtime = [50]
+general:dt = [5.0e-1]
+general:variabledt = [yes]
+general:targetcfl = [0.5]
+general:writecontrol = [runTime]
+general:writeinterval = [1.0]
+velocity = [(null)]
+velocity:density = [1.0]
+velocity:viscosity = [5.744563e-5]
+temperature = [(null)]
+temperature:conjugateheattransfer = [yes]
+temperature:rhocp = [1.0]
+temperature:conductivity = [1.740776e-3]
+_iotrunc = [(null)]
+_iotrunc:filetocomp = [cht2d0.f]
+_iotrunc:scomp = [yes]
+_iotrunc:sdecomp = [yes]
+_iotrunc:insitucomp = [no]
+_iotrunc:numfile = [5]
+_iotrunc:truncstep = [5]
+_iotrunc:readstep = [7]
+_iotrunc:targeterr = [1e-2]
+ Reading /ccs/home/ldulac/Nek5000/NekDCTB/examples/cht2d/run_gen/cht2d.re2                                                                   
+ nelgt/nelgv/lelt:         400         200         403
+ lx1/lx2/lx3/lxd:           8           8           8          12
+
+
+
+ partioning elements to MPI ranks
+ Reading /ccs/home/ldulac/Nek5000/NekDCTB/examples/cht2d/run_gen/cht2d.ma2                                                                   
+ 
+ Max neighbors: 3 | Min neighbors: 3 | Avg neighbors: 3.000000
+ Max nvolume: 27 | Min nvolume: 1 | Avg nvolume: 14.500000
+ Max volume: 46 | Min volume: 44 | Avg volume: 45.000000
+ Max elements: 100 | Min elements: 100 | Balance: 1.000000
+  
+ done :: partioning   0.30970E-02 sec
+
+ reading mesh 
+ reading bc for ifld           1
+ reading bc for ifld           2
+ done :: read .re2 file    0.38E-01 sec
+
+ setup mesh topology
+   Right-handed check complete for         400 elements. OK.
+   setvert2d:   8        3021       17421        3021        3021
+gs_setup: 211 unique labels shared
+   pairwise times (avg, min, max): 6.16913e-06 5.9191e-06 6.4822e-06
+   crystal router                : 5.12212e-06 5.0916e-06 5.1447e-06
+   all reduce                    : 6.4241e-06 6.4141e-06 6.4361e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 25876 25876 25876
+   buffer bytes (avg, min, max): 3952 3952 3952
+   setupds time 1.1175E-03 seconds   0  8        3021         200
+   setvert2d:   8        5481       19881        5481        5481
+gs_setup: 561 unique labels shared
+   pairwise times (avg, min, max): 5.4337e-06 5.2709e-06 5.5454e-06
+   crystal router                : 6.3144e-06 6.2427e-06 6.3951e-06
+   all reduce                    : 1.02636e-05 1.01972e-05 1.03224e-05
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 35720 35716 35724
+   buffer bytes (avg, min, max): 4560 4544 4576
+   setupds time 1.4430E-03 seconds   1  8        5481         400
+           4  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ NOTE: All elements deformed , param(59) ^=0
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00 xyz repair 1
+  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00 xyz repair 2
+  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00 xyz repair 3
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+   0.0000000000000000        2.0000000000000000       Xrange
+ -0.20000000298023224        1.2000000476837158       Yrange
+   0.0000000000000000        0.0000000000000000       Zrange
+ done :: verify mesh topology
+  
+ mesh metrics:
+ GLL grid spacing min/max    : 2.57E-03 2.09E-02
+ scaled Jacobian  min/max/avg: 1.00E+00 1.00E+00 1.00E+00
+ aspect ratio     min/max/avg: 1.00E+00 2.50E+00 1.75E+00
+
+ IFTRAN    = T
+ IFFLOW    = T
+ IFHEAT    = T
+ IFSPLIT   = T
+ IFLOMACH  = F
+ IFUSERVP  = F
+ IFUSERMV  = F
+ IFPERT    = F
+ IFADJ     = F
+ IFSTRS    = F
+ IFCHAR    = F
+ IFCYCLIC  = F
+ IFAXIS    = F
+ IFMVBD    = F
+ IFMELT    = F
+ IFNEKNEK  = F
+ IFNEKNEKC = F
+ IFSYNC    = F
+   
+ IFVCOR    = T
+ IFINTQ    = F
+ IFGEOM    = F
+ IFSURT    = F
+ IFWCNO    = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ IFTMSH for field           2    =  T
+ IFADVC for field           2    =  T
+ IFNONL for field           2    =  F
+   
+ Dealiasing enabled, nxd=          12
+  
+ Estimated eigenvalues
+ EIGAA =    6.1685027506808492     
+ EIGGA =    260987.90683419263     
+ EIGAE =    2.4674011002723395     
+ EIGAS =    5.0000000000000003E-002
+ EIGGE =    260987.90683419263     
+ EIGGS =    2.0000000000000000     
+  
+ initialize pressure solver
+ mg_nx:           1           3           7
+ mg_ny:           1           3           7
+ mg_nz:           0           0           0
+gs_setup: 31 unique labels shared
+   pairwise times (avg, min, max): 2.65702e-06 2.5919e-06 2.7352e-06
+   crystal router                : 2.82582e-06 2.7773e-06 2.8814e-06
+   all reduce                    : 3.11807e-06 3.1078e-06 3.1318e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 2780 2780 2780
+   buffer bytes (avg, min, max): 288 288 288
+   setupds time 3.1542E-04 seconds   2  2         441         200
+   setvert2d:   4        1301        2901        1301        5481
+gs_setup: 91 unique labels shared
+   pairwise times (avg, min, max): 3.53715e-06 3.4755e-06 3.5867e-06
+   crystal router                : 3.82997e-06 3.8081e-06 3.8513e-06
+   all reduce                    : 4.53005e-06 4.5155e-06 4.5436e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 7580 7580 7580
+   buffer bytes (avg, min, max): 768 768 768
+   setupds time 4.7692E-04 seconds   3  4        1301         200
+   setvert2d:   4        1301        2901        1301        5481
+gs_setup: 91 unique labels shared
+   pairwise times (avg, min, max): 3.50735e-06 3.4465e-06 3.5737e-06
+   crystal router                : 3.53088e-06 3.5056e-06 3.5597e-06
+   all reduce                    : 3.6318e-06 3.6028e-06 3.6528e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 11476 11476 11476
+   buffer bytes (avg, min, max): 1712 1712 1712
+   setupds time 4.5391E-04 seconds   4  4        1301         200
+   setvert2d:   6        2161        8561        2161        5469
+gs_setup: 151 unique labels shared
+   pairwise times (avg, min, max): 3.44827e-06 3.3262e-06 3.5167e-06
+   crystal router                : 2.97057e-06 2.9395e-06 3.0026e-06
+   all reduce                    : 4.40425e-06 4.3582e-06 4.4383e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 18676 18676 18676
+   buffer bytes (avg, min, max): 2832 2832 2832
+   setupds time 5.3812E-04 seconds   5  6        2161         200
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3           7
+ h1_mg_ny:           1           3           7
+ h1_mg_nz:           0           0           0
+gs_setup: 31 unique labels shared
+   pairwise times (avg, min, max): 2.58292e-06 2.5248e-06 2.639e-06
+   crystal router                : 2.24747e-06 2.2201e-06 2.2753e-06
+   all reduce                    : 2.9596e-06 2.9425e-06 2.9797e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 4276 4276 4276
+   buffer bytes (avg, min, max): 592 592 592
+   setupds time 2.6028E-04 seconds   6  2         441         200
+   setvert2d:   4        1301        2901        1301        2153
+gs_setup: 91 unique labels shared
+   pairwise times (avg, min, max): 3.36612e-06 3.3123e-06 3.4365e-06
+   crystal router                : 3.69697e-06 3.6749e-06 3.714e-06
+   all reduce                    : 3.74328e-06 3.7009e-06 3.7741e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 7580 7580 7580
+   buffer bytes (avg, min, max): 768 768 768
+   setupds time 4.3208E-04 seconds   7  4        1301         200
+   setvert2d:   4        1301        2901        1301        2153
+gs_setup: 91 unique labels shared
+   pairwise times (avg, min, max): 3.42647e-06 3.3123e-06 3.5377e-06
+   crystal router                : 3.05725e-06 3.0347e-06 3.0948e-06
+   all reduce                    : 3.39112e-06 3.3733e-06 3.4104e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 11476 11476 11476
+   buffer bytes (avg, min, max): 1712 1712 1712
+   setupds time 6.2000E-04 seconds   8  4        1301         200
+   setvert2d:   6        2161        8561        2161        5469
+gs_setup: 151 unique labels shared
+   pairwise times (avg, min, max): 3.43867e-06 3.3312e-06 3.5156e-06
+   crystal router                : 2.87392e-06 2.8324e-06 2.9115e-06
+   all reduce                    : 3.8172e-06 3.7932e-06 3.8563e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 18676 18676 18676
+   buffer bytes (avg, min, max): 2832 2832 2832
+   setupds time 5.6790E-04 seconds   9  6        2161         200
+   setvert2d:   8        3021       17421        3021        5433
+gs_setup: 211 unique labels shared
+   pairwise times (avg, min, max): 3.6078e-06 3.4946e-06 3.711e-06
+   crystal router                : 3.12715e-06 3.1079e-06 3.1459e-06
+   all reduce                    : 5.01642e-06 4.9974e-06 5.0355e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 25876 25876 25876
+   buffer bytes (avg, min, max): 3952 3952 3952
+   setupds time 6.5433E-04 seconds  10  8        3021         200
+   setvert2d:  10        3881       29481        3881        5433
+gs_setup: 271 unique labels shared
+   pairwise times (avg, min, max): 3.79215e-06 3.7511e-06 3.8382e-06
+   crystal router                : 3.92182e-06 3.9113e-06 3.9294e-06
+   all reduce                    : 6.09148e-06 6.0664e-06 6.1075e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 21980 21980 21980
+   buffer bytes (avg, min, max): 2208 2208 2208
+   setupds time 6.7382E-04 seconds  11 10        3881         200
+ setup h1 coarse grid, nx_crs=           2
+gs_setup: 31 unique labels shared
+   pairwise times (avg, min, max): 2.80025e-06 2.687e-06 2.8604e-06
+   crystal router                : 2.3189e-06 2.3104e-06 2.3294e-06
+   all reduce                    : 2.82058e-06 2.7762e-06 2.8674e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 4276 4276 4276
+   buffer bytes (avg, min, max): 592 592 592
+ done :: setup h1 coarse grid    1.1891380000000062E-003  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ nekuic (1) for ifld            2
+ call nekuic for ifld            2
+ call nekuic for vel  
+ xyz min     0.0000     -0.20000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000      -14.000    
+ xyz max     2.0000       1.2000       0.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       15.000    
+ done :: set initial conditions
+  
+ call userchk
+  [MONITOR] Registered module [FRAME]: Framework backbone
+  [MONITOR] Registered module [MONITOR]: Monitoring module
+  [MONITOR] Registered timer [FRM_TOT]: Total elapsed framework time
+  [MONITOR] Initial log threshold set to:  4
+  [MONITOR] Module [RUNPAR] not registered
+  [MONITOR] Registered module [RUNPAR]: Runtime parameters
+  [RUNPAR] Module [RUNPAR] registered section _RUNPAR: Runtime parameter section for rprm module
+  [RUNPAR] Section _RUNPAR registered parameter PARFWRITE: Do we write runtime parameter file
+  [RUNPAR] Section _RUNPAR registered parameter PARFNAME: Runtime parameter file name for output (without .par)
+  [RUNPAR] Module [MONITOR] registered section _MONITOR: Runtime parameter section for monitor module
+  [RUNPAR] Section _MONITOR registered parameter LOGLEVEL: Logging threshold for toolboxes
+  [RUNPAR] Section _MONITOR registered parameter IFTIMDSCR: Write timer description in the summary
+  [RUNPAR] Section _MONITOR registered parameter WALLTIME: Simulation wall time
+  [MONITOR] Module [IOTOOL] not registered
+  [MONITOR] Registered module [IOTOOL]: I/O TOOLS
+  [MONITOR] Module [IOTRUNC] not registered
+  [MONITOR] Registered module [IOTRUNC]: IO truncation and compression
+  [RUNPAR] Module [IOTRUNC] registered section _IOTRUNC: Runtime paramere section for io truncation module
+  [RUNPAR] Section _IOTRUNC registered parameter FILETOCOMP: Filename to compress
+  [RUNPAR] Section _IOTRUNC registered parameter SCOMP: Compress in post prc mode
+  [RUNPAR] Section _IOTRUNC registered parameter SDECOMP: DeCompress in post prc mode
+  [RUNPAR] Section _IOTRUNC registered parameter INSITUCOMP: IN SITU compression
+  [RUNPAR] Section _IOTRUNC registered parameter NUMFILE: Number of files to compress
+  [RUNPAR] Section _IOTRUNC registered parameter TRUNCSTEP: Truncation and output interval
+  [RUNPAR] Section _IOTRUNC registered parameter READSTEP: Read files interval
+  [RUNPAR] Section _IOTRUNC registered parameter TARGETERR: Target error for compression
+  [MONITOR] Reseting log threshold to:  4
+  [MONITOR] Summary of registered modules
+    [FRAME     ] : Framework backbone                                                                                                                  
+        [MONITOR   ] : Monitoring module                                                                                                                   
+        [RUNPAR    ] : Runtime parameters                                                                                                                  
+        [IOTOOL    ] : I/O TOOLS                                                                                                                           
+        [IOTRUNC   ] : IO truncation and compression                                                                                                       
+  [RUNPAR] Summary of registered runtime parameters for active sections
+#
+[_RUNPAR]               # Runtime parameter section for rprm module
+PARFWRITE            = no                     # Do we write runtime parameter file
+PARFNAME             = outparfile             # Runtime parameter file name for output (without .par)
+#
+[_MONITOR]              # Runtime parameter section for monitor module
+LOGLEVEL             = 4                      # Logging threshold for toolboxes
+IFTIMDSCR            = no                     # Write timer description in the summary
+WALLTIME             = 00:00                  # Simulation wall time
+#
+[_IOTRUNC]              # Runtime paramere section for io truncation module
+FILETOCOMP           = cht2d0.f               # Filename to compress
+SCOMP                = yes                    # Compress in post prc mode
+SDECOMP              = yes                    # DeCompress in post prc mode
+INSITUCOMP           = no                     # IN SITU compression
+NUMFILE              = 5                      # Number of files to compress
+TRUNCSTEP            = 5                      # Truncation and output interval
+READSTEP             = 7                      # Read files interval
+TARGETERR            = 0.10000000E-01         # Target error for compression
+ 
+ file to comp is cht2d0.f                                                                                                                            
+ done :: userchk
+
+gridpoints unique/tot:         10011        12800
+dofs vel/pr:                    9591        10011
+2: 12800, 12800,3200
+3: 12800, 19200,3200
+0: 12800, 0,3200
+1: 12800, 6400,3200
+terminate called after throwing an instance of 'std::invalid_argument'
+  what():  ERROR: start[0] = 19200 > shape[0], = 12800 in DefineVariable X
+
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+#0  0x7f14a51dab1f in ???
+#1  0x7f14a51daa9f in ???
+#2  0x7f14a51ade04 in ???
+#3  0x7f14a6ff8e52 in _ZN9__gnu_cxx27__verbose_terminate_handlerEv
+	at /sw/.testing/belhorn/andes-tmp/gcc-build-9.3.0-1/gcc-9.3.0/libstdc++-v3/libsupc++/vterminate.cc:95
+#4  0x7f14a70046c5 in _ZN10__cxxabiv111__terminateEPFvvE
+	at /sw/.testing/belhorn/andes-tmp/gcc-build-9.3.0-1/gcc-9.3.0/libstdc++-v3/libsupc++/eh_terminate.cc:48
+#5  0x7f14a7004730 in _ZSt9terminatev
+	at /sw/.testing/belhorn/andes-tmp/gcc-build-9.3.0-1/gcc-9.3.0/libstdc++-v3/libsupc++/eh_terminate.cc:58
+#6  0x7f14a7004984 in __cxa_throw
+	at /sw/.testing/belhorn/andes-tmp/gcc-build-9.3.0-1/gcc-9.3.0/libstdc++-v3/libsupc++/eh_throw.cc:95
+#7  0x7f14a476791b in operator()
+	at /ccs/home/ldulac/Nek5000/NekDCTB/Nek5000/3rd_party/adios2/ADIOS2/source/adios2/core/VariableBase.cpp:449
+#8  0x7f14a4862a53 in _ZN6adios24core12VariableBase13InitShapeTypeEv
+	at /ccs/home/ldulac/Nek5000/NekDCTB/Nek5000/3rd_party/adios2/ADIOS2/source/adios2/core/VariableBase.cpp:461
+#9  0x7f14a4862fd7 in _ZN6adios24core12VariableBaseC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS_8DataTypeEmRKSt6vectorImSaImEESF_SF_b
+	at /ccs/home/ldulac/Nek5000/NekDCTB/Nek5000/3rd_party/adios2/ADIOS2/source/adios2/core/VariableBase.cpp:38
+#10  0x7f14a482e55d in _ZN6adios24core8VariableIdEC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorImSaImEESF_SF_b
+	at /ccs/home/ldulac/Nek5000/NekDCTB/Nek5000/3rd_party/adios2/ADIOS2/source/adios2/core/Variable.cpp:111
+#11  0x7f14a47f56cd in _ZN6adios24core2IO14DefineVariableIdEERNS0_8VariableIT_EERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorImSaImEESJ_SJ_b
+	at /ccs/home/ldulac/Nek5000/NekDCTB/Nek5000/3rd_party/adios2/ADIOS2/source/adios2/core/IO.tcc:52
+#12  0x7f14a73e68c4 in _ZN6adios22IO14DefineVariableIdEENS_8VariableIT_EERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorImSaImEESH_SH_b
+	at /ccs/home/ldulac/Nek5000/NekDCTB/Nek5000/3rd_party/adios2/ADIOS2/bindings/CXX11/adios2/cxx11/IO.tcc:27
+#13  0x54b5de in ???
+#14  0x5495f2 in ???
+#15  0x40759b in ???
+#16  0x4062cb in ???
+#17  0x7f14a51c6cf2 in ???
+#18  0x40662d in ???
+#19  0xffffffffffffffff in ???
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 3683186 on node andes3 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------

@@ -1,0 +1,31 @@
+# Nek5000 parameter file
+[GENERAL]
+stopAt = endTime
+endTime = 50
+dt = 5.0e-1
+variabledt = yes
+targetCFL = 0.5
+writeControl = runTime
+writeInterval = 1.0
+
+[VELOCITY]
+density = 1.0
+# viscosity = sqrt(1/Ra)
+viscosity = 5.744563e-5
+
+[TEMPERATURE]
+conjugateHeatTransfer = yes
+rhoCp = 1.0
+# conductivity = sqrt(Ra * Pr)
+conductivity = 1.740776e-3
+
+#
+[_IOTRUNC]
+FILETOCOMP           = "cht2d0.f"
+SCOMP                = yes
+SDECOMP              = yes
+INSITUCOMP           = no
+NUMFILE              = 5
+TRUNCSTEP            = 5
+READSTEP             = 7
+TARGETERR            = 1e-2
